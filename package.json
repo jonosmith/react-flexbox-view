@@ -7,8 +7,7 @@
   "files": [
     "css",
     "es",
-    "lib",
-    "umd"
+    "lib"
   ],
   "scripts": {
     "build": "nwb build-react-component",
@@ -39,11 +38,12 @@
     "eslint-plugin-react": "^6.10.3",
     "nwb": "0.15.x"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Jonathan Smith",
+  "homepage": "https://github.com/jonosmith/react-flexbox-view",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/jonosmith/react-flexbox-view",
   "keywords": [
-    "react-component"
+    "react-component",
+    "flexbox"
   ]
 }
