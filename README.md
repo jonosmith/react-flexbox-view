@@ -8,6 +8,7 @@ A generic [**Flexbox**](https://scotch.io/tutorials/a-visual-guide-to-css3-flexb
 
 The API provides some abstractions over flexbox with readability and useability in mind, with the full power of flexbox still available if you need. A number of shortcut props have been provided that address common use cases when constructing user interfaces
 
+**WARNING**: API is not 100% finalised yet and is subject to change
 
 # Install
 

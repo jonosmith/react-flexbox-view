@@ -1,5 +1,5 @@
 /**
- * Helper View component with defaults for creating rows
+ * Helper View component with defaults for creating columns
  */
 
 import React from 'react'
@@ -7,7 +7,7 @@ import { node } from 'prop-types'
 import View from './index'
 
 const Row = ({ children, ...props }) => (
-  <View wrap row {...props}>{children}</View>
+  <View column {...props}>{children}</View>
 )
 
 Row.propTypes = {
