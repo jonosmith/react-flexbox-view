@@ -169,11 +169,12 @@ const Example = () => (
 [MIT](https://opensource.org/licenses/MIT)
 
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[build-badge]: https://travis-ci.org/jonosmith/react-flexbox-view.svg?branch=master
+[build]: https://travis-ci.org/jonosmith/react-flexbox-view
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+[npm-badge]: https://img.shields.io/npm/v/react-flexbox-view.png?style=flat-square
+[npm]: https://www.npmjs.org/package/react-flexbox-view
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+[coveralls-badge]: https://coveralls.io/repos/github/jonosmith/react-flexbox-view/badge.svg?branch=master
+[coveralls]: https://coveralls.io/github/jonosmith/react-flexbox-view?branch=master
+
