@@ -1,6 +1,6 @@
 {
   "name": "react-flexbox-view",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A general purpose Flexbox based UI container component for React",
   "main": "lib/index.js",
   "module": "es/index.js",

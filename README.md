@@ -1,7 +1,7 @@
 # React Flexbox View
 
 [![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
+[![NPM][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
 A generic [**Flexbox**](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties) based layout component for wrapping other components.
@@ -102,8 +102,8 @@ const Example = () => (
 
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
-| column | `boolean` | | Sets the [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) (ie. how items are placed within the container) to `column`  |
-| row | `boolean` | | Explicitly sets the [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) to `row`  |
+| column | `boolean`, `string` | | Sets the [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) to `column` when `True` or `column-reverse` when `"reverse"` <br><br> **TIP** You can use responsive helpers here eg. `smOnly`, `smOnly md-reverse lgOnly` |
+| row | `boolean`, `string` | | Explicitly sets the [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) to `row` when `True` or `row-reverse` when `"reverse"` <br><br> **TIP** You can use responsive helpers here eg. `smOnly`, `smOnly md-reverse lgOnly` |
 | wrap | `boolean`, `string` | | Sets the [flex-wrap](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap) property ie. whether child flex items are forced onto a single line or can be wrapped onto multiple lines.<br><br>**TIP**: Specifying `'reverse'` is a shortcut for `'wrap-reverse'` |
 | grow | `boolean`, `number` | `true` | The flex grow factor ([flex-grow](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)) ie. what amount of space inside the flex container the item should take up <br><br> **TIP:** `true` will set it to 1 and `false` will set to 0 |
 | shrink | `boolean`, `number` | | The flex shrink factor ([flex-shrink](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)) ie. how much the flex item will shrink relative to the other items in the container <br><br> **TIP:** `true` will set it to 1 and `false` will set to 0 |
@@ -172,7 +172,7 @@ const Example = () => (
 [build-badge]: https://travis-ci.org/jonosmith/react-flexbox-view.svg?branch=master
 [build]: https://travis-ci.org/jonosmith/react-flexbox-view
 
-[npm-badge]: https://img.shields.io/npm/v/react-flexbox-view.png?style=flat-square
+[npm-badge]: https://badge.fury.io/js/react-flexbox-view.svg
 [npm]: https://www.npmjs.org/package/react-flexbox-view
 
 [coveralls-badge]: https://coveralls.io/repos/github/jonosmith/react-flexbox-view/badge.svg?branch=master
