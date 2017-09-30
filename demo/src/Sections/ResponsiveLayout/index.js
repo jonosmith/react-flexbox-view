@@ -1,7 +1,7 @@
 /* global __NAME__ */
 
-import React from 'react'
 import dedent from 'dedent-js'
+import React from 'react'
 import View from '../../../../src/index'
 import CodeBlock from '../../components/CodeBlock/index'
 import Item from '../../components/Item/index'
@@ -41,23 +41,25 @@ const ResponsiveLayout = () => (
       </View>
     </ItemContainer>
     <View>
-      <CodeBlock>{dedent(`
-        import View from '${__NAME__}'
+      <CodeBlock>
+        {dedent(`
+          import View from '${__NAME__}'
 
-        ...
+          ...
 
-        <View wrap>
-          <View xs={1} />
-          <View xs={1} sm={1/2} />
-          <View xs={1} sm={1/2} />
-          <View xsOnly={1} />
-          <View xsOnly={1} />
-          <View xsOnly={1} />
-          <View />
-          <View />
-          <View />
-        </View>
-      `)}</CodeBlock>
+          <View wrap>
+            <View xs={1} />
+            <View xs={1} sm={1/2} />
+            <View xs={1} sm={1/2} />
+            <View xsOnly={1} />
+            <View xsOnly={1} />
+            <View xsOnly={1} />
+            <View />
+            <View />
+            <View />
+          </View>
+        `)}
+      </CodeBlock>
     </View>
   </Section>
 )
