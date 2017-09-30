@@ -1,5 +1,5 @@
-import React from 'react'
 import { string } from 'prop-types'
+import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { tomorrowNight } from 'react-syntax-highlighter/dist/styles'
 import styled from 'styled-components'
@@ -12,10 +12,7 @@ const StyledSyntaxHighlighter = styled(SyntaxHighlighter)`
 
 export default function CodeBlock({ children }) {
   return (
-    <StyledSyntaxHighlighter
-      language='javascript'
-      style={tomorrowNight}
-    >
+    <StyledSyntaxHighlighter language="javascript" style={tomorrowNight}>
       {children}
     </StyledSyntaxHighlighter>
   )

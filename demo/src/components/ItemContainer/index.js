@@ -1,5 +1,5 @@
-import React from 'react'
 import color from 'open-color'
+import React from 'react'
 import styled from 'styled-components'
 import View from '../../../../src'
 

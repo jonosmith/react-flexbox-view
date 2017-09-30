@@ -1,5 +1,5 @@
-import React from 'react'
 import dedent from 'dedent-js'
+import React from 'react'
 import View from '../../../../../src/index'
 import CodeBlock from '../../../components/CodeBlock/index'
 import Item from '../../../components/Item/index'
@@ -13,13 +13,15 @@ const AlignSelf = () => (
       <Item align="center" />
       <Item align="end" />
     </ItemContainer>
-    <CodeBlock>{dedent(`
-      <View>
-        <View align="start" />
-        <View align="center" />
-        <View align="end" />
-      </View>
-    `)}</CodeBlock>
+    <CodeBlock>
+      {dedent(`
+        <View>
+          <View align="start" />
+          <View align="center" />
+          <View align="end" />
+        </View>
+      `)}
+    </CodeBlock>
   </View>
 )
 

@@ -1,6 +1,6 @@
-import React from 'react'
 import color from 'open-color'
-import { node  } from 'prop-types'
+import { node } from 'prop-types'
+import React from 'react'
 import styled from 'styled-components'
 import View from '../../../../src/'
 
@@ -12,12 +12,7 @@ const ItemContent = styled(View)`
 
 const Item = ({ children, ...props }) => (
   <View padding="smallest" {...props}>
-    <ItemContent
-      column
-      alignContent="center"
-      alignItems="center"
-      justifyContent="center"
-    >
+    <ItemContent column alignContent="center" alignItems="center" justifyContent="center">
       {children}
     </ItemContent>
   </View>

@@ -1,13 +1,11 @@
-import React from 'react'
 import dedent from 'dedent-js'
+import React from 'react'
 import View from '../../../../../src/index'
 import CodeBlock from '../../../components/CodeBlock/index'
 import Item from '../../../components/Item/index'
 import ItemContainer from '../../../components/ItemContainer/index'
 
-const Cell = () => (
-  <Item basis="4rem" grow={false} />
-)
+const Cell = () => <Item basis="4rem" grow={false} />
 
 const JustifyContent = () => (
   <View column>
@@ -27,29 +25,31 @@ const JustifyContent = () => (
       <Cell />
       <Cell />
     </ItemContainer>
-    <CodeBlock>{dedent(`
-      const Cell = () => (
-        <View basis="4rem" grow={false} />
-      )
+    <CodeBlock>
+      {dedent(`
+        const Cell = () => (
+          <View basis="4rem" grow={false} />
+        )
 
-      ...
+        ...
 
-      <View justifyContent="end">
-        <Cell />
-        <Cell />
-        <Cell />
-      </View>
-      <View justifyContent="end">
-        <Cell />
-        <Cell />
-        <Cell />
-      </View>
-      <View justifyContent="end">
-        <Cell />
-        <Cell />
-        <Cell />
-      </View>
-    `)}</CodeBlock>
+        <View justifyContent="end">
+          <Cell />
+          <Cell />
+          <Cell />
+        </View>
+        <View justifyContent="end">
+          <Cell />
+          <Cell />
+          <Cell />
+        </View>
+        <View justifyContent="end">
+          <Cell />
+          <Cell />
+          <Cell />
+        </View>
+      `)}
+    </CodeBlock>
   </View>
 )
 

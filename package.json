@@ -1,6 +1,6 @@
 {
   "name": "react-flexbox-view",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A general purpose Flexbox based UI container component for React",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -10,33 +10,38 @@
     "lib"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
-    "clean": "nwb clean-module && npm clean-demo",
-    "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "build": "./node_modules/.bin/nwb build-react-component",
+    "clean": "./node_modules/.bin/nwb clean-module && npm clean-demo",
+    "format": "./node_modules/.bin/prettier",
+    "lint": "./node_modules/.bin/eslint ./demo/src ./src",
+    "start": "./node_modules/.bin/nwb serve-react-demo",
+    "test": "./node_modules/.bin/nwb test-react",
+    "test:coverage": "./node_modules/.bin/nwb test-react --coverage",
+    "test:watch": "./node_modules/.bin/nwb test-react --server"
   },
   "dependencies": {
     "dedent-js": "^1.0.1",
     "lodash": "^4.17.4",
     "open-color": "^1.5.1",
-    "prop-types": "^15.5.6",
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-syntax-highlighter": "^5.5.0",
     "styled-components": "^2.0.0-15"
   },
   "peerDependencies": {
-    "react": "15.x"
+    "react": "16.x"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^6.10.3",
-    "nwb": "0.15.x"
+    "expect": "^21.2.1",
+    "nwb": "0.18.x",
+    "prettier": "1.7.2"
   },
   "author": "Jonathan Smith",
   "homepage": "https://github.com/jonosmith/react-flexbox-view",

@@ -1,10 +1,8 @@
-import React from 'react'
 import { node } from 'prop-types'
+import React from 'react'
 import View from '../../../../src'
 
-const ItemText = ({ children, ...props }) => (
-  <View alignItems="center">{children}</View>
-)
+const ItemText = ({ children, ...props }) => <View alignItems="center">{children}</View>
 
 ItemText.propTypes = {
   children: node,

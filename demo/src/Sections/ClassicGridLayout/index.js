@@ -1,5 +1,5 @@
-import React from 'react'
 import dedent from 'dedent-js'
+import React from 'react'
 import View, { ViewProvider } from '../../../../src/index'
 import CodeBlock from '../../components/CodeBlock/index'
 import Item from '../../components/Item/index'
@@ -25,7 +25,8 @@ const ClassicGridLayout = () => (
       </ViewProvider>
     </ItemContainer>
     <View>
-      <CodeBlock>{dedent(`
+      <CodeBlock>
+        {dedent(`
         import { Col, Row } from '${__NAME__}'
 
         ...
@@ -34,7 +35,8 @@ const ClassicGridLayout = () => (
           <Col xs={12} sm={6} />
           <Col xs={12} sm={6} />
         </Row>
-        `)}</CodeBlock>
+        `)}
+      </CodeBlock>
     </View>
   </Section>
 )

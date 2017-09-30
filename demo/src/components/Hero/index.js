@@ -1,5 +1,5 @@
-import React from 'react'
 import color from 'open-color'
+import React from 'react'
 import styled from 'styled-components'
 import View from '../../../../src'
 
@@ -11,6 +11,8 @@ const Wrapper = styled(View)`
 
 export default function Hero({ children, ...props }) {
   return (
-    <Wrapper column center marginBottom="largest" {...props}>{children}</Wrapper>
+    <Wrapper column center marginBottom="largest" {...props}>
+      {children}
+    </Wrapper>
   )
 }
