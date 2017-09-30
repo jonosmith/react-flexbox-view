@@ -1,3 +1,5 @@
+/* global __NAME__ */
+
 import React from 'react'
 import dedent from 'dedent-js'
 import View from '../../../../src/index'
@@ -13,11 +15,11 @@ const ResponsiveLayout = () => (
     <ItemContainer column>
       <View wrap>
         <Item xs={1}>full</Item>
-        <Item xs={1} sm={1/2}>
+        <Item xs={1} sm={1 / 2}>
           <ItemText>full (xs+)</ItemText>
           <ItemText>half (sm+)</ItemText>
         </Item>
-        <Item xs={1} sm={1/2}>
+        <Item xs={1} sm={1 / 2}>
           <ItemText>full (xs+)</ItemText>
           <ItemText>half (sm+)</ItemText>
         </Item>
