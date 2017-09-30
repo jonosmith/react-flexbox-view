@@ -25,6 +25,20 @@ export const BREAKPOINTS = {
 }
 
 /**
+ * Default scale for use by spacing helpers eg. marginTop="small"
+ * @type {Object}
+ */
+export const SPACING_SCALE = {
+  smallest: '0.1rem',
+  smaller: '0.3rem',
+  small: '0.6rem',
+  regular: '1rem',
+  large: '1.3rem',
+  larger: '1.6',
+  largest: '2rem',
+}
+
+/**
  * An array of all possible breakpoint props eg. xs, xsOnly, sm, smOnly etc.
  * @type {Array}
  */

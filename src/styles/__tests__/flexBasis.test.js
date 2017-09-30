@@ -2,17 +2,18 @@
 
 import dedent from 'dedent-js'
 import expect from 'expect'
-import { BREAKPOINTS, DEFAULT_GRID_SIZE, BREAKPOINT_ONLY_IDENTIFIER } from '../constants'
-import { computeFlexBasis, nextBreakpointValue } from '../utils'
+import { BREAKPOINT_ONLY_IDENTIFIER, BREAKPOINTS, DEFAULT_GRID_SIZE } from '../../constants'
+import { nextBreakpointValue } from '../../utils'
+import { flexBasis } from '../index'
 
 function assertHasStyles(options, expectedStyles) {
-  const outputStyles = computeFlexBasis({ breakpoints: BREAKPOINTS, ...options })
+  const outputStyles = flexBasis({ breakpoints: BREAKPOINTS, ...options })
   expect(outputStyles).toContain(expectedStyles)
 }
 
-describe('computeFlexBasis()', () => {
+describe('flexBasis()', () => {
   it('Returns an empty string when no arguments are provided', () => {
-    const outputStyles = computeFlexBasis()
+    const outputStyles = flexBasis()
     expect(outputStyles).toEqual('')
   })
 

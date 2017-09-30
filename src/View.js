@@ -5,43 +5,37 @@
 import { bool, node, number, object, oneOf, oneOfType, shape, string } from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {
-  computeAlignmentProperty,
-  computeDimension,
-  computeFlexBasis,
-  computeFlexDirection,
-  computeFlexWrap,
-  computeShrink,
-  computeSpacing,
-} from './utils'
+import * as styles from './styles'
 import { CHANNEL } from './ViewProvider'
+import { SPACING_SCALE, BREAKPOINTS } from './constants'
 
+// prettier-ignore
 const Div = styled.div`
-  ${({ alignContent }) => computeAlignmentProperty('align-content', alignContent)}
-  ${({ alignItems, center }) => (computeAlignmentProperty('align-items', center ? 'center' : alignItems))}
-  ${({ alignSelf, align }) => computeAlignmentProperty('align-self', align || alignSelf)}
-  ${({ basis, ...otherProps }) => computeFlexBasis({ basis, ...otherProps })}
-  ${({ column, row, breakpoints }) => computeFlexDirection({ column, row, breakpoints })}
+  ${({ alignContent }) => styles.alignmentProperty('align-content', alignContent)}
+  ${({ alignItems, center }) => (styles.alignmentProperty('align-items', center ? 'center' : alignItems))}
+  ${({ alignSelf, align }) => styles.alignmentProperty('align-self', align || alignSelf)}
+  ${({ basis, ...otherProps }) => styles.flexBasis({ basis, ...otherProps })}
+  ${({ column, row, breakpoints }) => styles.flexDirection({ column, row, breakpoints })}
   ${({ inline }) => `display: ${inline ? 'inline-flex' : 'flex'};`}
   ${({ grow }) => (grow ? `flex-grow: ${Number(grow)};` : '')}
-  ${({ h, fit }) => computeDimension('height', h, fit)}
-  ${({ justifyContent, center }) => (computeAlignmentProperty('justify-content', center ? 'center' : justifyContent))}
-  ${({ margin, scales }) => computeSpacing('margin', margin, scales)}
-  ${({ marginBottom, scales }) => computeSpacing('margin-bottom', marginBottom, scales)}
-  ${({ marginLeft, scales }) => computeSpacing('margin-left', marginLeft, scales)}
-  ${({ marginRight, scales }) => computeSpacing('margin-right', marginRight, scales)}
-  ${({ marginTop, scales }) => computeSpacing('margin-top', marginTop, scales)}
+  ${({ h, fit }) => styles.dimension('height', { value: h, fit })}
+  ${({ justifyContent, center }) => (styles.alignmentProperty('justify-content', center ? 'center' : justifyContent))}
+  ${({ margin, scales }) => styles.spacing('margin', margin, scales)}
+  ${({ marginBottom, scales }) => styles.spacing('margin-bottom', marginBottom, scales)}
+  ${({ marginLeft, scales }) => styles.spacing('margin-left', marginLeft, scales)}
+  ${({ marginRight, scales }) => styles.spacing('margin-right', marginRight, scales)}
+  ${({ marginTop, scales }) => styles.spacing('margin-top', marginTop, scales)}
   ${({ minHeight }) => minHeight ? `min-height: ${minHeight};` : ''}
   ${({ minWidth }) => minWidth ? `min-width: ${minWidth};` : ''}
-  ${({ padding, scales }) => computeSpacing('padding', padding, scales)}
-  ${({ paddingBottom, scales }) => computeSpacing('padding-bottom', paddingBottom, scales)}
-  ${({ paddingLeft, scales }) => computeSpacing('padding-left', paddingLeft, scales)}
-  ${({ paddingRight, scales }) => computeSpacing('padding-right', paddingRight, scales)}
-  ${({ paddingTop, scales }) => computeSpacing('padding-top', paddingTop, scales)}
+  ${({ padding, scales }) => styles.spacing('padding', padding, scales)}
+  ${({ paddingBottom, scales }) => styles.spacing('padding-bottom', paddingBottom, scales)}
+  ${({ paddingLeft, scales }) => styles.spacing('padding-left', paddingLeft, scales)}
+  ${({ paddingRight, scales }) => styles.spacing('padding-right', paddingRight, scales)}
+  ${({ paddingTop, scales }) => styles.spacing('padding-top', paddingTop, scales)}
   ${({ position }) => (position ? `position: ${position};` : '')}
-  ${({ shrink }) => computeShrink(shrink)}
-  ${({ w, fit }) => computeDimension('width', w, fit)}
-  ${({ flexWrap, nowrap }) => computeFlexWrap(nowrap ? 'nowrap' : flexWrap)}
+  ${({ shrink }) => styles.shrink(shrink)}
+  ${({ w, fit }) => styles.dimension('width', { value: w, fit })}
+  ${({ flexWrap, nowrap }) => styles.flexWrap(nowrap ? 'nowrap' : flexWrap)}
 `
 
 export default class View extends Component {
@@ -120,24 +114,10 @@ export default class View extends Component {
 
   static defaultProps = {
     basis: 0,
-    breakpoints: {
-      xs: 0,
-      sm: 576,
-      md: 768,
-      lg: 992,
-      xl: 1200,
-    },
+    breakpoints: BREAKPOINTS,
     grow: true,
     position: 'relative',
-    scales: {
-      smallest: '0.1rem',
-      smaller: '0.3rem',
-      small: '0.6rem',
-      regular: '1rem',
-      large: '1.3rem',
-      larger: '1.6',
-      largest: '2rem',
-    },
+    scales: SPACING_SCALE,
   }
 
   static contextTypes = {
@@ -160,8 +140,6 @@ export default class View extends Component {
       ...this.context[CHANNEL],
     }
 
-    return (
-      <Div {...parsedProps}>{children}</Div>
-    )
+    return <Div {...parsedProps}>{children}</Div>
   }
 }

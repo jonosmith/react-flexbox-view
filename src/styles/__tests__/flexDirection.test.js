@@ -2,40 +2,40 @@
 
 import dedent from 'dedent-js'
 import expect from 'expect'
-import { compact } from 'lodash'
+import { BREAKPOINTS } from '../../constants'
 import {
-  computeFlexDirection,
+  compact,
+  isBreakpointOnly,
   nextBreakpointValue,
-  stripResponsiveIdentifier,
   responsiveIdentifier,
   responsiveIdentifierWithoutOnly,
-  isBreakpointOnly,
-} from '../utils'
-import { BREAKPOINTS } from '../constants'
+  stripResponsiveIdentifier,
+} from '../../utils'
+import { flexDirection } from '../index'
 
-describe('computeFlexDirection()', () => {
+describe('flexDirection()', () => {
   it('Returns an empty string when no arguments provided', () => {
-    const result = computeFlexDirection()
+    const result = flexDirection()
     expect(result).toEqual('')
   })
 
   it('Sets direction column when the "column" argument is true', () => {
-    const result = computeFlexDirection({ column: true })
+    const result = flexDirection({ column: true })
     expect(result).toContain('flex-direction: column')
   })
 
   it('Sets direction row when the "row" argument is true', () => {
-    const result = computeFlexDirection({ column: false, row: true })
+    const result = flexDirection({ column: false, row: true })
     expect(result).toContain('flex-direction: row')
   })
 
   it('Sets direction to "row-reverse" when the "row" argument is "reverse"', () => {
-    const result = computeFlexDirection({ column: false, row: 'reverse' })
+    const result = flexDirection({ column: false, row: 'reverse' })
     expect(result).toContain('flex-direction: row-reverse')
   })
 
   it('Sets direction to "row-reverse" when the "column" argument is "reverse"', () => {
-    const result = computeFlexDirection({ column: 'reverse' })
+    const result = flexDirection({ column: 'reverse' })
     expect(result).toContain('flex-direction: column-reverse')
   })
 
@@ -44,7 +44,7 @@ describe('computeFlexDirection()', () => {
 
     function testBreakpoint(direction, value) {
       it(`Generates correct CSS for ${direction} = "${value}"`, () => {
-        const result = computeFlexDirection({ [direction]: value, breakpoints: BREAKPOINTS })
+        const result = flexDirection({ [direction]: value, breakpoints: BREAKPOINTS })
 
         expectedStyles(direction, value).forEach(computedExpectedStyle => {
           expect(result).toContain(computedExpectedStyle)
