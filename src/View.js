@@ -5,9 +5,10 @@
 import { bool, node, number, object, oneOf, oneOfType, shape, string } from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
+
+import { BREAKPOINTS, SPACING_SCALE } from './constants'
 import * as styles from './styles'
 import { CHANNEL } from './ViewProvider'
-import { SPACING_SCALE, BREAKPOINTS } from './constants'
 
 // prettier-ignore
 const Div = styled.div`
@@ -40,16 +41,6 @@ const Div = styled.div`
 
 export default class View extends Component {
   static propTypes = {
-    align: oneOf([
-      'center',
-      'end',
-      'flex-end',
-      'flex-start',
-      'space-around',
-      'space-between',
-      'start',
-      'stretch',
-    ]),
     alignContent: oneOf([
       'center',
       'end',
@@ -57,6 +48,7 @@ export default class View extends Component {
       'flex-start',
       'space-around',
       'space-between',
+      'space-evenly',
       'start',
       'stretch',
     ]),
@@ -84,9 +76,10 @@ export default class View extends Component {
       'end',
       'flex-end',
       'flex-start',
-      'start',
       'space-around',
       'space-between',
+      'space-evenly',
+      'start',
     ]),
     lg: number,
     marginLeft: oneOfType([bool, string]),
