@@ -1,7 +1,6 @@
 import dedent from 'dedent-js'
 
 import { BREAKPOINT_ONLY_IDENTIFIER, RESPONSIVE_IDENTIFIER_PATTERN } from '../constants'
-import { isNil } from './lodash'
 
 //-------------------------------------------------------------------------------------------------
 // 3RD PARTY UTILS
@@ -12,16 +11,6 @@ export * from './lodash'
 //-------------------------------------------------------------------------------------------------
 // OTHER UTILS
 //-------------------------------------------------------------------------------------------------
-
-/**
- * Determines if the given value is defined (ie. is not null or undefined)
- *
- * @param {*} value - The value to test
- * @return {boolean} - True if the value is not null or undefined
- */
-export function isDefined(value) {
-  return !isNil(value)
-}
 
 /**
  * For the given breakpoint key, get the value of the next breakpoint up

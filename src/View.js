@@ -2,17 +2,16 @@
  * Main view component
  */
 
-import { bool, element, node, number, object, oneOf, oneOfType, shape, string } from 'prop-types'
+import { bool, node, number, object, oneOf, oneOfType, shape, string } from 'prop-types'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import { BREAKPOINTS, SPACING_SCALE } from './constants'
 import * as styles from './styles'
-import { isDefined, isString } from './utils'
 import { CHANNEL } from './ViewProvider'
 
 // prettier-ignore
-const StyledDiv = styled.div`
+const Div = styled.div`
   ${({ alignContent }) => styles.alignmentProperty('align-content', alignContent)}
   ${({ alignItems, center }) => (styles.alignmentProperty('align-items', center ? 'center' : alignItems))}
   ${({ alignSelf, align }) => styles.alignmentProperty('align-self', align || alignSelf)}
@@ -100,7 +99,6 @@ export default class View extends Component {
     scales: object,
     shrink: oneOfType([bool, number]),
     sm: number,
-    tag: string,
     width: string,
     wrap: oneOfType([bool, oneOf(['reverse'])]),
     xl: number,
@@ -120,7 +118,7 @@ export default class View extends Component {
   }
 
   render() {
-    const { children, height, tag, width, wrap, ...props } = this.props
+    const { children, height, width, wrap, ...props } = this.props
 
     const parsedProps = {
       // Rename some props so they don't get added to the div
@@ -135,7 +133,6 @@ export default class View extends Component {
       ...this.context[CHANNEL],
     }
 
-    const Component = tag ? StyledDiv.withComponent(tag) : StyledDiv
-    return <Component {...parsedProps}>{children}</Component>
+    return <Div {...parsedProps}>{children}</Div>
   }
 }
