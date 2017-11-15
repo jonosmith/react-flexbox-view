@@ -17,7 +17,8 @@
     "start": "./node_modules/.bin/nwb serve-react-demo",
     "test": "./node_modules/.bin/nwb test-react",
     "test:coverage": "./node_modules/.bin/nwb test-react --coverage",
-    "test:watch": "./node_modules/.bin/nwb test-react --server"
+    "test:watch": "./node_modules/.bin/nwb test-react --server",
+    "deploy": "npm run build && gh-pages -d demo/dist" 
   },
   "dependencies": {
     "dedent-js": "^1.0.1",
@@ -40,6 +41,7 @@
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^6.10.3",
     "expect": "^21.2.1",
+    "gh-pages": "^1.0.0",
     "nwb": "0.18.x",
     "prettier": "1.7.2"
   },
