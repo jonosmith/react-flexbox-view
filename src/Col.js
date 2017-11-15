@@ -2,8 +2,9 @@
  * Helper View component with defaults for creating columns
  */
 
-import React from 'react'
 import { node } from 'prop-types'
+import React from 'react'
+
 import View from './index'
 
 const Row = ({ children, ...props }) => (

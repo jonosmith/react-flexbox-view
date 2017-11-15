@@ -1,6 +1,6 @@
-import React, { Children, Component } from 'react'
 import { omit } from 'lodash'
 import { object } from 'prop-types'
+import React, { Children, Component } from 'react'
 
 export const CHANNEL = '__react-flexbox-view__'
 

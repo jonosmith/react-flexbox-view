@@ -43,6 +43,11 @@
     "nwb": "0.18.x",
     "prettier": "1.7.2"
   },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "module"
+    }
+  },
   "author": "Jonathan Smith",
   "homepage": "https://github.com/jonosmith/react-flexbox-view",
   "license": "MIT",

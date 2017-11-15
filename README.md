@@ -117,7 +117,7 @@ const Example = () => (
 | alignItems | `string` | | Defines how the browser distributes space between and around child items along the **cross axis** of their container. <br><br> Valid options include `center`, `end`, `flex-end`, `flex-start`, `start`, `space-around`, `space-between` <br><br> **TIP**: `start` and `end` are shortcuts for `flex-start` and `flex-end` respectively |
 | alignContent | `string` | |  Aligns the container's lines along the **cross axis** in **multi-line** containers. Has no effect in single line boxes<br><br> Valid options include `center`, `end`, `flex-end`, `flex-start`, `start`, `space-around`, `space-between` <br><br> **TIP**: `start` and `end` are shortcuts for `flex-start` and `flex-end` respectively |
 | alignSelf | `string` | |  Allows the default alignment along the **cross axis** specified by the container's `alignItems` to be overwritten for the individual component.<br><br> Valid options include `center`, `end`, `flex-end`, `flex-start`, `start`, `space-around`, `space-between` <br><br> **TIP**: `start` and `end` are shortcuts for `flex-start` and `flex-end` respectively |
-| center | `number`, `string` | | Positions children in the center of the component (both axes). Is a shortcut for setting `alignItems="center"` and `justifyContent="center"` |
+| center | `boolean` | | Positions children in the center of the component (both axes). Is a shortcut for setting `alignItems="center"` and `justifyContent="center"` |
 
 
 ## Responsive Props

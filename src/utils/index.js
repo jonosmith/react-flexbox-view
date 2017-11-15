@@ -1,4 +1,5 @@
 import dedent from 'dedent-js'
+
 import { BREAKPOINT_ONLY_IDENTIFIER, RESPONSIVE_IDENTIFIER_PATTERN } from '../constants'
 
 //-------------------------------------------------------------------------------------------------
@@ -92,9 +93,10 @@ export function breakpoint(breakpoint, breakpoints) {
 }
 
 /**
+ * Determines if the given breakpoint key is an "Only" type breakpoint eg. smOnly
  *
- * @param breakpointKey
- * @returns {boolean}
+ * @param {string} breakpointKey - eg. sm, mdOnly
+ * @returns {boolean} - True if the given breakpoint key is
  */
 export function isBreakpointOnly(breakpointKey) {
   const pattern = `${BREAKPOINT_ONLY_IDENTIFIER}$`
@@ -104,7 +106,7 @@ export function isBreakpointOnly(breakpointKey) {
 /**
  * Determines if the given string has a responsive identifier or not
  *
- * @param {String} string - The string to check eg. sm-row, lg-space-around
+ * @param {string} string - The string to check eg. sm-row, lg-space-around
  * @returns {boolean} - True if the given prop is responsive or not
  */
 export function hasResponsiveIdentifier(string) {
